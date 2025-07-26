@@ -1,0 +1,18 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "Nothing to install"
+
+  build:
+    commands:
+      - echo "Copying website files to build directory"
+      - mkdir build
+      - cp index.html build/
+      - cp error.html build/
+      - cp styles.css build/
+
+artifacts:
+  files:
+    - build/**/*
