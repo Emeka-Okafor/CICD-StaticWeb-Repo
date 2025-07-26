@@ -8,11 +8,12 @@ phases:
   build:
     commands:
       - echo "Copying website files to build directory"
-      - mkdir build
+      - mkdir -p build
       - cp index.html build/
       - cp error.html build/
       - cp styles.css build/
 
 artifacts:
+  base-directory: build
   files:
-    - build/**/*
+    - '**/*'
