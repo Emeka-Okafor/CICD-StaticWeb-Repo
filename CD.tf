@@ -211,11 +211,18 @@ data "aws_iam_policy_document" "codepipeline_policy" {
     actions = [
       "s3:GetBucketVersioning",
       "s3:PutObject",
-      "s3:GetObject"
+      "s3:GetObject",
+      "s3:PutObjectAcl",
+      "s3:GetBucketLocation"
+      
     ]
 
     resources = [
-      "${aws_s3_bucket.ci_cd_bucket.arn}/*"
+      "${aws_s3_bucket.ci_cd_bucket.arn}/*",
+      "${aws_s3_bucket.website_bucket.arn}",
+      "${aws_s3_bucket.website_bucket.arn}/*",
+      "${aws_s3_bucket.ci_cd_bucket.arn}"
+      
     ]
  }
 
